@@ -1,0 +1,11 @@
+
+@media screen and (min-width: 1600px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl{
+        max-width: 1600px;
+    } 
+}
+@media screen and (min-width: 1920px){
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+        max-width: 1920px;
+    } 
+}

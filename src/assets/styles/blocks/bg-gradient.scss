@@ -1,0 +1,16 @@
+.bg-gradient{
+    position: relative;
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(310.34deg, #B88BE4 12.93%, #FFC9E3 72.18%);
+        background-blend-mode: hard-light;
+        opacity: 0.4;
+        transition: $transition4;
+    }
+}

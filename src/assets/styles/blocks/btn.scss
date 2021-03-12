@@ -1,0 +1,34 @@
+.btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    border-radius: $radiusBtn;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 15px;
+    cursor: pointer;
+    &:hover{
+        background: linear-gradient(360deg, #B88BE4 0%, #FFC9E3 100%);
+        color: #fff;
+    }
+
+    &-border{
+        background: #fff;
+        border: 1px solid rgba($dark, .5);
+        &:hover{
+            border: 1px solid transparent;
+        }
+        
+    }
+    &-grad{
+        background: linear-gradient(360deg, #B88BE4 0%, #FFC9E3 100%);
+        color: #fff;
+    &:hover{
+        background: #fff;
+        color: $dark;
+        }
+    }
+}
