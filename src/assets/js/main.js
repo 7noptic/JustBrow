@@ -146,12 +146,26 @@ if(header){
 
 
     let bannerSlider = new Swiper('.swiper-container-banner', {
-        slidesPerColumn: 1,
+        slidesPerView: 1,
         spaceBetween: 0,
         autoplay: {
             delay: 4500,
         }
-        
+
+    });
+    let worksSlider = new Swiper('.swiper-works', {
+        slidesPerView: 3,
+        spaceBetween: 33,
+        initialSlide: 1,
+        centeredSlides: true,
+    });
+    let reviewsSlider = new Swiper('.swiper-reviews', {
+        slidesPerView: 2,
+        spaceBetween: 50,
+        navigation: {
+            nextEl: '.reviews__next',
+            prevEl: '.reviews__prev'
+        },
     });
     let sliderTags = new Swiper('.swiper-container-tags', {
         slidesPerView: 'auto',

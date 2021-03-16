@@ -1,0 +1,18 @@
+.inst-link{
+  margin-top: 50px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  img{
+    margin: 0 0 10px 0;
+  }
+  &__link{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__btn{
+    padding: 13px 40px;
+  }
+}

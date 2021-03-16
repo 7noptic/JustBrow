@@ -47,3 +47,12 @@
         }
     }
 }
+@media screen and (max-width: 1599px){
+    .header{
+        padding: 60px 0;
+        &__text{
+            font-size: 14px;
+            margin-bottom: 50px;
+        }
+    }
+}

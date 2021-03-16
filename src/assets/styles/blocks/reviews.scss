@@ -1,0 +1,43 @@
+.reviews {
+  &__next, &__prev {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 8px);
+
+  }
+
+  &__prev {
+    left: 0;
+    transform: rotate(180deg);
+  }
+
+  &__next {
+    right: 0;
+
+  }
+
+  &-block {
+    padding: 60px 0;
+
+    &__slider {
+      position: relative;
+    }
+  }
+
+  &-item {
+    display: flex;
+    box-shadow: 0px 8px 20px rgba(216, 167, 227, 0.3);
+
+    &__left, &__right {
+      width: 50%;
+    }
+
+    &__left {
+      border-radius: 6px 0px 0px 6px;
+    }
+
+    &__right {
+      border-radius: 0px 6px 6px 0px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.footer {
+  padding: 200px 0 150px;
+  background-image: url('../img/foot.svg');
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__title {
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    margin-bottom: 90px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 75px;
+
+    a {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 30px;
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__copy {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .footer {
+    background-image: none;
+
+    &__copy {
+      text-align: center;
+    }
+  }
+}
