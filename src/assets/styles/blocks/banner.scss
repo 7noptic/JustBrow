@@ -1,9 +1,16 @@
 .banner {
   margin-bottom: 100px;
-
+  &__logo{
+    display: none;
+  }
+  &__text{
+   display: none;
+  }
   &__img {
     width: 100%;
     height: 1020px;
+    position: relative;
+    
 
     img {
       width: 100%;
@@ -36,9 +43,73 @@
 
 @media screen and (max-width: 1199px) {
   .banner {
+    position: relative;
+    &__text{
+      display: block;
+      position: absolute;
+      bottom: 160px;
+      width: 100%;
+      margin: 0;
+      padding: 0 60px;
+      font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  
+  color: #FFFFFF;
+  
+  text-shadow: 0px 4px 8px rgba(24, 0, 55, 0.5);
+    }
+    &__logo{
+      display: block;
+      z-index: 10;
+      position: absolute;
+      top: 40px;
+      left: calc(50% - 63px);
+    }
     width: 100vw;
     max-width: 100vw;
-    margin-left: calc(-30px + ((-134) - (-30)) * ((100vw - 991px) / (1199 - 991)));
+    margin-left: calc(-30px + ((-134) - (-30)) * ((100vw - 992px) / (1199 - 992)));
+  }
+
+}
+@media screen and (max-width: 991px) {
+  .banner {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(-39px + ((-152) - (-39)) * ((100vw - 768px) / (991 - 768)));
+  }
+
+}
+@media screen and (max-width: 767px) {
+  .banner {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(-33px + ((-130) - (-33)) * ((100vw - 576px) / (767 - 576)));
+    &__text{
+      bottom: 25px;
+      width: 100%;
+      margin: 0;
+      padding: 0 40px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+    &__img {
+      height: 560px;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .banner {
+    &__logo{
+      top: 26px;
+    }
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: -15px;
+    &__img {
+      height: 480px;
+      
+    }
   }
 
 }

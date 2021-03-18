@@ -37,9 +37,49 @@
 @media screen and (max-width: 1199px) {
   .footer {
     background-image: none;
+    padding: 150px 0;
 
     &__copy {
       text-align: center;
+    }
+    &__logo{
+      margin-bottom: 50px;
+      display: block;
+    }
+  }
+}
+@media screen and (max-width:767px){
+  .footer{
+    padding: 100px 0 0;
+    &__title{
+      font-weight: 300;
+font-size: 18px;
+line-height: 23px;
+margin-bottom: 20px;
+    }
+    &__menu{
+      margin-bottom: 50px;
+      a{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 10px;
+      }
+    }
+    &__copy{
+      margin-bottom: 40px;
+    }
+  }
+}
+@media screen and (max-width:575px){
+  .footer{
+    &__title{
+      text-align: left;
+    }
+    &__menu{
+      a{
+        text-align: left;
+      }
     }
   }
 }

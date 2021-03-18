@@ -38,8 +38,10 @@
     line-height: 18px;
     text-align: center;
     margin-bottom: 10px;
+    display: block;
 
     &-b {
+      display: block;
       text-align: center;
       margin-bottom: 15px;
       font-weight: 500;
@@ -104,6 +106,28 @@
       }
 
 
+    }
+  }
+}
+@media screen and (max-width:767px){
+  .map{
+    &-form {
+
+      margin-bottom: 50px;
+
+
+    }
+    iframe {
+      height: 470px;
+    }
+  }
+}
+@media screen and (max-width:575px){
+  .map{
+    iframe {
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      margin-right: -15px;
     }
   }
 }

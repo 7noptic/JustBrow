@@ -107,3 +107,12 @@
     }
   }
 }
+@media screen and (max-width: 575px){
+  .works {
+    &__img {
+      width: 220px;
+      height: 220px;
+    }
+    
+  }
+}

@@ -1,0 +1,17 @@
+.pagination {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  
+    & > a {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+  
+      &.active {
+        font-weight: 500;
+      }
+    }
+  }

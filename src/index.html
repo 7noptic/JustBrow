@@ -12,10 +12,22 @@
 </head>
 <body>
 <main>
+    <nav class="site-nav">
+        <div class="btn btn-grad site-nav__burger js-header-burger">
+            <img class="js-header-burger" src="img/brgr.svg" alt="">
+        </div>
+        <div class="btn btn-grad site-nav__call js-call">
+            <img class="js-call" src="img/call.svg" alt="">
+        </div>
+    </nav>
+
     <div class="container">
         <div class="row">
             <div class="col-2 d-none d-xl-block">
-                <header class="header">
+                <header data-da=".modal-header,1199,1" class="header">
+                    <div class="header__exit">
+                        <img src="img/hex.jpg" alt="" class="js-header-exit">
+                    </div>
                     <a href="#" class="logo">
                         <img src="img/logo.svg" alt="">
                     </a>
@@ -24,6 +36,7 @@
                         макияжа бровей №1 <br>
                         в городе Киров
                     </p>
+                    
                     <nav class="header__menu">
                         <a href="#">Услуги</a>
                         <a href="#">Мои работы</a>
@@ -65,28 +78,47 @@
                             <div class="swiper-slide">
                                 <div class="banner__img bg-gradient">
                                     <img src="img/banner.jpg" alt="">
+                                    <div class="banner__text">
+                                        Студия перманентного макияжа бровей <br>
+№1 городе Киров
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="swiper-slide">
                                 <div class="banner__img bg-gradient">
                                     <img src="img/banner.jpg" alt="">
+                                    <div class="banner__text">
+                                        Студия перманентного макияжа бровей <br>
+№1 городе Киров
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="swiper-slide">
                                 <div class="banner__img bg-gradient">
                                     <img src="img/banner.jpg" alt="">
+                                    <div class="banner__text">
+                                        Студия перманентного макияжа бровей <br>
+№1 городе Киров
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="swiper-slide">
                                 <div class="banner__img bg-gradient">
                                     <img src="img/banner.jpg" alt="">
+                                    <div class="banner__text">
+                                        Студия перманентного макияжа бровей <br>
+№1 городе Киров
+                                    </div>
                                 </div>
                             </div>
 
                         </div>
+                    </div>
+                    <div class="banner__logo">
+                        <img src="img/blogo.svg" alt="">
                     </div>
                 </section>
 
@@ -97,6 +129,8 @@
                     <div class="services-block__items">
 
                         <div class="services-item">
+                            <div class="services-item__wrapper">
+
 
                             <a href="#" class="services-item__img bg-gradient">
                                 <img src="img/s1.jpg" alt="">
@@ -112,8 +146,11 @@
 
                         </div>
 
-                        <div class="services-item">
 
+                        </div>
+
+                        <div class="services-item">
+                            <div class="services-item__wrapper">
                             <a href="#" class="services-item__img bg-gradient">
                                 <img src="img/s2.jpg" alt="">
                             </a>
@@ -125,11 +162,11 @@
                             <p class="services-item__price">
                                 от 200 ₽
                             </p>
-
+                                </div>
                         </div>
 
                         <div class="services-item">
-
+                            <div class="services-item__wrapper">
                             <a href="#" class="services-item__img bg-gradient">
                                 <img src="img/s3.jpg" alt="">
                             </a>
@@ -141,11 +178,11 @@
                             <p class="services-item__price">
                                 от 900 ₽
                             </p>
-
+                                        </div>
                         </div>
 
                         <div class="services-item">
-
+                            <div class="services-item__wrapper">
                             <a href="#" class="services-item__img bg-gradient">
                                 <img src="img/s4.jpg" alt="">
                             </a>
@@ -157,11 +194,11 @@
                             <p class="services-item__price">
                                 от 200 ₽
                             </p>
-
+                            </div>
                         </div>
 
                         <div class="services-item">
-
+                            <div class="services-item__wrapper">
                             <a href="#" class="services-item__img bg-gradient">
                                 <img src="img/s5.jpg" alt="">
                             </a>
@@ -173,7 +210,7 @@
                             <p class="services-item__price">
                                 от 400 ₽
                             </p>
-
+                            </div>
                         </div>
 
                     </div>
@@ -351,7 +388,7 @@
                     </div>
                 </section>
 
-                <section class="request" style="background-image: url('../img/r.jpg');">
+                <section class="request" style="background-image: url('img/r.jpg');">
                     <h2 class="request__title">
                         ПОМОЩЬ В ВЫБОРЕ УСЛУГИ <br>
                         ПО УХОДУ ЗА БРОВЯМИ
@@ -638,7 +675,7 @@
                     </div>
                 </section>
 
-                <section class="about-block">
+                <section class="about-block d-none d-md-block">
                     <div class="row">
 
                         <div class="col-12 col-xl-6 d-flex">
@@ -692,7 +729,7 @@
 
                 </section>
 
-                <section class="request" style="background-image: url('../img/r.jpg');">
+                <section class="request" style="background-image: url('img/r.jpg');">
                     <h2 class="request__title">
                         ПОМОЩЬ В ВЫБОРЕ УСЛУГИ <br>
                         ПО УХОДУ ЗА БРОВЯМИ
@@ -715,19 +752,19 @@
                                 Мои сертификаты
                             </h2>
                         </div>
-                        <div class="col-12 col-lg-4">
+                        <div class="col-12 col-md-6 col-xl-4 d-flex justify-content-center">
                             <div class="certificate__img">
                                 <img src="img/c1.jpg" alt="">
                             </div>
                         </div>
-                        <div class="col-12 col-lg-8">
+                        <div class="col-12 col-md-6 col-xl-8">
                             <div class="row">
-                                <div class="col-12 col-xl-6">
+                                <div class="col-12 col-xl-6 d-flex justify-content-center">
                                     <div class="certificate__img">
                                         <img src="img/c2.jpg" alt="">
                                     </div>
                                 </div>
-                                <div class="col-12 col-xl-6">
+                                <div class="col-12 col-xl-6 d-flex justify-content-center">
                                     <div class="certificate__img">
                                         <img src="img/c2.jpg" alt="">
                                     </div>
@@ -735,12 +772,12 @@
                             </div>
 
                             <div class="row d-none d-xl-flex">
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-6 d-flex justify-content-center">
                                     <div class="certificate__img">
                                         <img src="img/c2.jpg" alt="">
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-6 d-flex justify-content-center">
                                     <div class="certificate__img">
                                         <img src="img/c2.jpg" alt="">
                                     </div>
@@ -757,7 +794,7 @@
                                 Как меня найти
                             </h2>
                         </div>
-                        <div class="col-12 col-lg-3 d-flex">
+                        <div class="col-12 col-md-3 d-flex justify-content-center">
                             <div class="map-form">
                                 <form action="POST">
                                     <a href="tel:89648615856" class="map__tel">
@@ -812,7 +849,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-9 d-flex">
+                        <div class="col-12 col-md-9 d-flex">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d133110.82393533312!2d49.52134561640623!3d58.5811068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43fcf77906ebc4df%3A0xd15d7841c23f66ed!2z0KDQvtGB0LHQsNC90Lo!5e0!3m2!1sru!2sru!4v1615881907907!5m2!1sru!2sru"
                                     loading="lazy"></iframe>
                         </div>
@@ -821,7 +858,12 @@
 
                 <footer class="footer">
                     <div class="row">
-                        <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="col-12 d-flex justify-content-center d-lg-none">
+                            <a href="index.html" class="footer__logo">
+                                <img src="img/logo.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-xl-3">
                             <h3 class="footer__title">
                                 О СТУДИИ
                             </h3>
@@ -835,7 +877,7 @@
                             </nav>
                         </div>
 
-                        <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="col-6 col-xl-3">
                             <h3 class="footer__title">
                                 УСЛУГИ
                             </h3>
@@ -849,7 +891,10 @@
                         </div>
                         <div class="col-12">
                             <div class="footer__copy">
-                                Вся информация на сайте – собственность Опариной А.А <br>
+                                Вся информация на сайте – собственность Опариной А.А 
+
+                            </div>
+                            <div class="footer__copy">
                                 Публикация информации с сайта Опариной А.А без разрешения запрещена. Все права защищены.
 
                             </div>
@@ -868,7 +913,64 @@
 
 <!-- MODAL -->
 <aside class="js-sidebars">
+<section class="modal-header"></section>
 
+<section class="modal modal-call">
+    <div class="modal__wrapper">
+        <div class="modal-call__exit">
+            <img src="img/hex.jpg" alt="" class="js-call-exit">
+        </div>
+
+    <div class="map-form">
+        <form action="POST">
+            <a href="tel:89648615856" class="map__tel">
+                8 (964) 861-58-56
+            </a>
+            
+            <p class="map__text-b">
+                Ангеловская <br>
+Анастасия Андреевна
+            </p>
+           
+
+            <p class="map__text-b">
+                Записаться на приём
+            </p>
+
+            <div class="map-form__wrapper">
+                    <span>
+                        <input type="text" class="form-control form__input" placeholder="Имя">
+                    </span>
+
+                <span>
+                        <input type="tel" class="form-control form__input"
+                               placeholder="Телефон">
+                    </span>
+
+                <span>
+                        <select name="services" id="services" class="form-control form__select">
+                            <option value="Выбрать услугу" selected disabled
+                                    style="display:none; font-size: 16px;font-weight: 300;">Выбрать услугу</option>\
+                            <option value="Ресницы">Ресницы</option>
+                            <option value="Брови">Брови</option>
+                            <option value="Ресницы2">Ресницы 2</option>
+                            <option value="Ресницы3">Ресницы 3</option>
+                        </select>
+                    </span>
+                <p class="form__agreement">
+                    Я согласен условиями предоставления <br>
+                    услуг и обработкой моих персональных <br>
+                    данных при нажатии “Заказать звонок”
+                </p>
+                <button class="btn btn-grad map-form__btn" type="submit">
+                    заказать звонок
+                </button>
+            </div>
+        </form>
+    </div>
+
+    </div>
+</section>
 
 </aside>
 <!-- !MODAL -->

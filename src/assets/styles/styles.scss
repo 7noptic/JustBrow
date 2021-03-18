@@ -7,7 +7,9 @@
 /* А */
 @import "blocks/advantage";
 @import "blocks/about";
+@import "blocks/article";
 /* В */
+@import "blocks/board-video";
 @import "blocks/banner";
 @import "blocks/btn";
 @import "blocks/bg-gradient";
@@ -16,6 +18,7 @@
 @import "blocks/container";
 @import "blocks/checkbox";
 @import "blocks/certificate";
+@import "blocks/contacts";
 /* D */
 
 /* E */
@@ -27,6 +30,7 @@
 
 /* H */
 @import "blocks/header";
+@import "blocks/headcrumbs";
 /* I */
 @import "blocks/inst-link";
 /* J */
@@ -37,13 +41,17 @@
 
 /* M */
 @import "blocks/modal";
+@import "blocks/modal-header";
 @import "blocks/map";
 /* N */
 
 /* O */
 
 /* P */
-
+@import "blocks/prices";
+@import "blocks/portfolio";
+@import "blocks/pagination";
+@import "blocks/page404";
 /* Q */
 
 /* R */
@@ -53,6 +61,8 @@
 /* S */
 @import "blocks/swiper";
 @import "blocks/services";
+@import "blocks/service";
+@import "blocks/site-nav";
 /* T */
 @import "blocks/title";
 @import "blocks/tags";

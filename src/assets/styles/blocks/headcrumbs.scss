@@ -1,0 +1,63 @@
+.kama_breadcrumbs{
+    padding-top: 80px;
+    margin-bottom: -50px;
+    & > div{
+      padding-top: 10px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      span{
+        display: inline-block;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 18px;
+      opacity: 1;
+      transition: $transition4;
+      padding-right:18px;
+      position: relative;
+      &.kb_sep{
+        padding-right: 0;
+        &::after{
+          content: url('../img/arrh.svg');
+          display: inline-block;
+          position: absolute;
+          top: 0px;
+    
+          right: 8px;
+        }
+        img{
+          display: none;
+        }
+      }
+      
+      }
+    }
+  }
+  @media screen and (max-width:1599px){
+    .kama_breadcrumbs{
+        margin-bottom: -40px;
+    }
+  }
+  @media screen and (max-width:1199px){
+    .kama_breadcrumbs{
+        padding-top: 50px;
+        margin-bottom: -30px;
+    }
+  }
+  @media screen and (max-width:991px){
+    .kama_breadcrumbs{
+        margin-bottom: -10px;
+    }
+  }
+  @media screen and (max-width:767px){
+    .kama_breadcrumbs{
+        margin-bottom: 0;
+    }
+  }
+  @media screen and (max-width:575px){
+    .kama_breadcrumbs{
+        padding-top: 0;
+        opacity: 0;
+    }
+  }

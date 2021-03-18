@@ -7,38 +7,27 @@ Swiper.use([Navigation, Pagination, Autoplay]);
 
 
 window.addEventListener('DOMContentLoaded', () =>{
-    /* HAMBURGER MENU IN HEADER*/
-    let header = document.querySelector('.header');
-        
-
-
-if(header){
-    let hamburgerBtn = header.querySelector('.js-burger'),
-        hamburgerMenu = header.querySelector('.hamburger-menu');
-    header.addEventListener('click', (e) => {
-        if (e.target && e.target.classList.contains('js-burger')) {
-            hamburgerMenu.classList.toggle('active');
-            hamburgerBtn.classList.toggle('active');
-        }
-        });
-}
-    
-    /* ЗАГРУЗКА ДАННЫХ ИЗ LocalStorage */
-    /* пример
-    if(localStorage.getItem('city') != null){
-        regionBtn.innerHTML = localStorage.getItem('city');
-    } else{
-        regionBtn.innerHTML = 'Москва';
-    }
-    */
 
    /* MODAL */
-   let modalBlock = document.querySelector('.js-sidebars'),
-   allModal = document.querySelectorAll('.js-sidebars > section');
+    let modalBlock = document.querySelector('.js-sidebars'),
+        allModal = document.querySelectorAll('.js-sidebars > section'),
+        headerModal = document.querySelector('.modal-header'),
+        callModal = document.querySelector('.modal-call');
 
 
+        
    document.addEventListener('click', e =>{
     let target = e.target;
+    if(headerModal){
+        if(target && (target.classList.contains('js-header-burger') || target.classList.contains('header__exit') || target.classList.contains('js-header-exit'))){
+            toggleModal(e, headerModal);
+        };
+    };
+    if(callModal){
+        if(target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit') || target.classList.contains('js-call-exit'))){
+            toggleModal(e, callModal);
+        };
+    };
     /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
         if (target && target.classList.contains('sidebar-bg')) {
             e.preventDefault();
@@ -156,8 +145,18 @@ if(header){
     let worksSlider = new Swiper('.swiper-works', {
         slidesPerView: 3,
         spaceBetween: 33,
-        initialSlide: 1,
         centeredSlides: true,
+        breakpoints: {
+            0:{
+                slidesPerView: 1,
+            },
+            767:{
+                slidesPerView: 3,
+                spaceBetween: 33,
+                initialSlide: 1,
+            },
+            
+        }
     });
     let reviewsSlider = new Swiper('.swiper-reviews', {
         slidesPerView: 2,
@@ -166,6 +165,15 @@ if(header){
             nextEl: '.reviews__next',
             prevEl: '.reviews__prev'
         },
+        breakpoints: {
+            0:{
+                slidesPerView: 1,
+            },
+            991:{
+                slidesPerView: 2,
+            },
+            
+        }
     });
     let sliderTags = new Swiper('.swiper-container-tags', {
         slidesPerView: 'auto',
@@ -179,6 +187,17 @@ if(header){
             nextEl: '.tags__next',
             prevEl: '.tags__prev'
         },
+        breakpoints: {
+            0:{
+                spaceBetween: 10,
+            },
+            767:{
+                spaceBetween: 15,
+            },
+            991:{
+                spaceBetween: 20,
+            }
+        }
 
 
     });
