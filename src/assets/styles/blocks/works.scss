@@ -87,6 +87,8 @@
 }
 @media screen and (max-width: 1199px) {
   .works {
+    padding: 80px 0;
+
     &__img {
       width: 340px;
       height: 340px;
@@ -109,6 +111,7 @@
 }
 @media screen and (max-width: 575px){
   .works {
+    padding: 50px 0;
     &__img {
       width: 220px;
       height: 220px;
