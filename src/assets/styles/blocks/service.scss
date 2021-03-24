@@ -1,154 +1,187 @@
-.service{
-    padding: 100px 0;
-    &__img{
+.service {
+  padding: 100px 0;
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px !important;
+    justify-content: left !important;
+    text-align: left !important;
+  }
+
+  &__descr {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 50px;
+  }
+
+  &__price {
+    margin-bottom: 50px;
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  &-form {
+    max-width: 550px;
+    margin-bottom: 50px;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        width: 50%;
+        padding-right: 40px;
+        margin-bottom: 30px;
+
+        input {
+
+        }
+      }
+    }
+
+    &__btn {
+      display: flex;
+      width: 100%;
+      padding: 13px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__agreement {
+      font-size: 10px;
+      line-height: 13px;
+      align-items: center;
+    }
+  }
+
+  &__info {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+
+    p {
+      padding-bottom: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .service {
+    padding: 80px 0;
+
+    &__title {
+      justify-content: center !important;
+      text-align: center !important;
+
+    }
+
+    &__descr {
+      text-align: center;
+    }
+
+    &__info {
+      margin-top: 50px;
+    }
+
+    .prices {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .service {
+    padding: 60px 0;
+
+    &-form {
+      margin-bottom: 0;
+
+      &__wrapper {
+        span {
+          width: 100%;
+          padding-right: 0px;
+          margin-bottom: 25px;
+
+          input {
+
+          }
+        }
+      }
+
+      &__btn {
+        display: flex;
+        width: 100%;
+        padding: 13px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      &__agreement {
+        font-size: 10px;
+        line-height: 13px;
+        align-items: center;
         display: flex;
         justify-content: center;
-        img{
-            border-radius: 50%;
-        }
+      }
     }
-    &__title{
-        margin-bottom: 30px!important;
-        justify-content: left!important;
-        text-align: left!important;
-    }
-    &__descr{
-        font-weight: 300;
-font-size: 14px;
-line-height: 18px;
-margin-bottom: 50px;
-    }
-    &__price{
-margin-bottom: 50px;
-font-size: 30px;
-line-height: 38px;
-    }
-    &-form{
-        max-width: 550px;
-        margin-bottom: 50px;
-        &__wrapper{
-            display: flex;
-            flex-wrap: wrap;
-            span{
-                width: 50%;
-                padding-right: 40px;
-                margin-bottom: 30px;
-                input{
 
-                }
-            }
-        }
-        &__btn{
-            display: flex;
-            width: 100%;
-            padding: 13px;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        &__text{
-            font-weight: 500;
-font-size: 14px;
-line-height: 18px;
-        }
-        &__agreement{
-            font-size: 10px;
-line-height: 13px;
-align-items: center;
-        }
+    &__info {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 18px;
+
+      p {
+        padding-bottom: 25px;
+      }
     }
-    &__info{
-        font-weight: 300;
-font-size: 14px;
-line-height: 18px;
-        p{
-            padding-bottom: 25px;
-        }
-    }
+  }
 }
-@media screen and (max-width: 1199px){
-    .service{
-        padding: 80px 0;
-        &__title{
-            justify-content: center!important;
-            text-align: center!important;
-            
-        }
-        &__descr{
-            text-align: center;
-        }
-        &__info{
-            margin-top: 50px;
-        }
-        .prices{
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
+
+@media screen and (max-width: 575px) {
+  .service {
+    padding: 50px 0;
+
+    &-form {
+
+      &__text {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+      }
     }
-}
-@media screen and (max-width: 991px){
-    .service{
-        padding: 60px 0;
-        &-form{
-            margin-bottom: 0;
-            &__wrapper{
-                span{
-                    width: 100%;
-                    padding-right: 0px;
-                    margin-bottom: 25px;
-                    input{
-    
-                    }
-                }
-            }
-            &__btn{
-                display: flex;
-                width: 100%;
-                padding: 13px;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
-            &__agreement{
-                font-size: 10px;
-                line-height: 13px;
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-        }
-        &__info{
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 18px;
-            p{
-                padding-bottom: 25px;
-            }
-        }
+
+    &__price {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      margin: 30px 0 40px;
     }
-}
-@media screen and (max-width: 575px){
-    .service{
-        padding: 50px 0;
-        &-form{
-            
-           &__text{
-               display: flex;
-               justify-content: center;
-               text-align: center;
-               width: 100%;
-           }
-        }
-        &__price{
-            display: flex;
-               justify-content: center;
-               text-align: center;
-               width: 100%;
-            margin: 30px 0 40px;
-        }
-        &__info{
-            margin-top: 30px;
-            text-align: center;
-        }
+
+    &__info {
+      margin-top: 30px;
+      text-align: center;
     }
+  }
 }
