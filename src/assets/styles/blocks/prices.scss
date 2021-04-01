@@ -39,6 +39,9 @@
             font-size: 18px;
             line-height: 23px;
         }
+        span{
+            display: none;
+        }
     }
 }
 @media screen and (max-width:1199px){
@@ -86,15 +89,13 @@
             border-bottom: 1px solid rgba(#000, .2);
         }
         &__name{
-            width: 65%;
+            display: none;
         }
         &__descr{
             display: none;
         }
         &__price{
-            width: 35%;
-            display: flex;
-                justify-content: end;
+            display: none;
         }
         &-item{
             display: flex;
@@ -104,6 +105,13 @@
             line-height: 13px;
             padding: 10px 0;
             flex-wrap: wrap;
+            span{
+                display: block;
+                font-size: 14px;
+                line-height: 18px;
+                font-weight:600;
+                margin-bottom: 5px;
+            }
             &__name{
                 order: 1;
                 width: 65%;
@@ -122,7 +130,14 @@
                 width: 35%;
                 font-size: 12px;
             line-height: 15px;
+            flex-wrap: wrap;
+            span{
+                width: 100%;
+                display: flex;
+                justify-content: end;
             }
+            }
+            
         }
     }
 }

@@ -230,6 +230,22 @@ window.addEventListener('DOMContentLoaded', () =>{
     });
     }
 
+    /* fix circle works*/   
+    let circleWorks = document.querySelectorAll('.works__info');
+
+    if(circleWorks){
+        resizeCircle();
+        window.addEventListener('resize', ()=>{
+            resizeCircle();
+          });
+    }
+    function resizeCircle(){
+        for(let i = 0; i < circleWorks.length; i++){
+            let width = circleWorks[i].offsetWidth
+            circleWorks[i].style.height = width + 'px';
+            
+        }
+    }
 
 
 
@@ -242,6 +258,7 @@ window.addEventListener('DOMContentLoaded', () =>{
             setupVideo(videos[i]);
         }
     }
+    
 
     function setupVideo(video) {
         let link = video.querySelector('.video__link');

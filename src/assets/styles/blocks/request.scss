@@ -109,11 +109,11 @@
 @media screen and (max-width: 575px) {
   .request {
     margin: 50px -130px;
-    padding: 70px 130px;
+    padding: 100px 130px;
     width: calc(100% + 260px);
     &__title{
       font-size: 23px;
-line-height: 30px;
+      line-height: 30px;
       margin: 0 0 45px 0;
     }
     &__subtitle{
