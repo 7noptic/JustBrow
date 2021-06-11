@@ -10,7 +10,7 @@
     font-size: 12px;
     line-height: 15px;
     cursor: pointer;
-    &:hover{
+    &:hover,&.active{
         background: linear-gradient(360deg, #B88BE4 0%, #FFC9E3 100%);
         color: #fff;
     }

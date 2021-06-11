@@ -6,68 +6,84 @@ import GLightbox from 'glightbox';
 Swiper.use([Navigation, Pagination, Autoplay]);
 
 
-window.addEventListener('DOMContentLoaded', () =>{
+window.addEventListener('DOMContentLoaded', () => {
 
-   /* MODAL */
+    /* MODAL */
     let modalBlock = document.querySelector('.js-sidebars'),
         allModal = document.querySelectorAll('.js-sidebars > section'),
         headerModal = document.querySelector('.modal-header'),
         callModal = document.querySelector('.modal-call');
 
 
-        
-   document.addEventListener('click', e =>{
-    let target = e.target;
-    if(headerModal){
-        if(target && (target.classList.contains('js-header-burger') || target.classList.contains('header__exit') || target.classList.contains('js-header-exit'))){
-            toggleModal(e, headerModal);
-        };
-    };
-    if(callModal){
-        if(target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit') || target.classList.contains('js-call-exit'))){
-            toggleModal(e, callModal);
-        };
-    };
-    /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
+    document.addEventListener('click', e => {
+        let target = e.target;
+        if (headerModal) {
+            if (target && (target.classList.contains('js-header-burger') || target.classList.contains('header__exit') || target.classList.contains('js-header-exit'))) {
+                toggleModal(e, headerModal);
+            }
+            ;
+        }
+        ;
+        if (callModal) {
+            if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit') || target.classList.contains('js-call-exit'))) {
+                toggleModal(e, callModal);
+            }
+            ;
+        }
+        ;
+        /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
         if (target && target.classList.contains('sidebar-bg')) {
             e.preventDefault();
             modalBlock.classList.toggle('sidebar-bg');
-            for(let i =0; i < allModal.length; i++){
+            for (let i = 0; i < allModal.length; i++) {
                 if (allModal[i].classList.toggle('active')) {
                     allModal[i].classList.remove('active');
                 }
             }
         }
-   });
-   
-   function toggleModal(e, modal) {
-    e.preventDefault();
-    modalBlock.classList.toggle('sidebar-bg');
-    modal.classList.toggle('active');
+    });
+
+    function toggleModal(e, modal) {
+        e.preventDefault();
+        modalBlock.classList.toggle('sidebar-bg');
+        modal.classList.toggle('active');
     }
 
 
-
     /* TABS */
+    let portfolioParent = document.querySelector('.portfolio'),
+        portfolioLink = document.querySelectorAll('.js-portfolio-link'),
+        portfolioTab = document.querySelectorAll('.js-portfolio-tab'),
+        priceParent = document.querySelector('.js-price-parent'),
+        priceLink = document.querySelectorAll('.js-price-link'),
+        priceTab = document.querySelectorAll('.js-price-tab');
+
+    if (portfolioLink && portfolioParent && portfolioTab) {
+        toggleTabs(portfolioLink, portfolioTab, portfolioParent, 'js-portfolio-link');
+    }
+    if (priceLink && priceParent && priceTab) {
+        toggleTabs(priceLink, priceTab, priceParent, 'js-price-link');
+    }
+
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {
         hideTabs(link, tabs);
         showTabs(0, link, tabs);
-        /*
-        let indexPrevTabs = 0,
-            TabsPrevHeight = tabs[indexPrevTabs].clientHeight;
-        console.log(tabs[0].clientHeight);
-        */
-        let subIndex = 0;
 
+        let subIndex = 0;
+        let trigger = false;
         if (subTabs) {
-            let subLinks = tabs[0].querySelectorAll(subLink),
-                subTabs = tabs[0].querySelectorAll(subContent);
+            let subLinks = tabs[subIndex].querySelectorAll(subLink),
+                subTabs = tabs[subIndex].querySelectorAll(subContent);
             hideTabs(subLinks, subTabs);
             showTabs(0, subLinks, subTabs);
+            trigger = true;
         }
         parent.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains(classContains)) {
                 e.preventDefault();
+                if (trigger) {
+                    subTabs = true;
+                }
 
                 for (let i = 0; i < link.length; i++) {
                     if (link[i] === e.target) {
@@ -80,18 +96,12 @@ window.addEventListener('DOMContentLoaded', () =>{
                             showTabs(0, subLinks, subTabs);
                             subIndex = i;
                         }
-                        /*
-                        if(tabs[i].clientHeight > TabsPrevHeight){
-                            console.log(tabs[i].clientHeight);
-                            console.log(TabsPrevHeight);
-                        }
-                        */
                     }
                 }
             }
             let subLinks = tabs[subIndex].querySelectorAll(subLink),
                 subTabs = tabs[subIndex].querySelectorAll(subContent);
-            if (e.target && e.target.classList.contains(subLink)) {
+            if (e.target && e.target.classList.contains('js-store-sublink')) {
                 e.preventDefault();
                 for (let i = 0; i < subLinks.length; i++) {
                     if (subLinks[i] === e.target) {
@@ -109,21 +119,21 @@ window.addEventListener('DOMContentLoaded', () =>{
     }
 
     function hideTabs(link, content) {
-        for(let i = 0; i < link.length; i++){
+        for (let i = 0; i < link.length; i++) {
             link[i].classList.remove('active');
         }
-        for(let i = 0; i < content.length; i++){
+        for (let i = 0; i < content.length; i++) {
             content[i].classList.remove('active');
         }
     }
 
     /* SHOW HIDE CONTENT */
-    
-    function toggleContent(link, content, linkClass){
+
+    function toggleContent(link, content, linkClass) {
         document.addEventListener('click', (e) => {
-            if(e.target && e.target.classList.contains(linkClass)){
+            if (e.target && e.target.classList.contains(linkClass)) {
                 e.preventDefault();
-                for(let i = 0; i < link.length; i++){
+                for (let i = 0; i < link.length; i++) {
                     if (e.target == link[i]) {
                         link[i].classList.toggle('active');
                         content[i].classList.toggle('active');
@@ -147,15 +157,15 @@ window.addEventListener('DOMContentLoaded', () =>{
         spaceBetween: 33,
         centeredSlides: true,
         breakpoints: {
-            0:{
+            0: {
                 slidesPerView: 1,
             },
-            767:{
+            767: {
                 slidesPerView: 3,
                 spaceBetween: 33,
                 initialSlide: 1,
             },
-            
+
         }
     });
     let reviewsSlider = new Swiper('.swiper-reviews', {
@@ -166,13 +176,13 @@ window.addEventListener('DOMContentLoaded', () =>{
             prevEl: '.reviews__prev'
         },
         breakpoints: {
-            0:{
+            0: {
                 slidesPerView: 1,
             },
-            991:{
+            991: {
                 slidesPerView: 2,
             },
-            
+
         }
     });
     let sliderTags = new Swiper('.swiper-container-tags', {
@@ -188,13 +198,13 @@ window.addEventListener('DOMContentLoaded', () =>{
             prevEl: '.tags__prev'
         },
         breakpoints: {
-            0:{
+            0: {
                 spaceBetween: 10,
             },
-            767:{
+            767: {
                 spaceBetween: 15,
             },
-            991:{
+            991: {
                 spaceBetween: 20,
             }
         }
@@ -205,49 +215,48 @@ window.addEventListener('DOMContentLoaded', () =>{
 
     /* RATING */
     let ratingParent = document.querySelector('.js-rating'),
-    ratingInput = document.querySelector('#js-rating'),
-    ratingStar = document.querySelectorAll('.js-rating > li');
+        ratingInput = document.querySelector('#js-rating'),
+        ratingStar = document.querySelectorAll('.js-rating > li');
 
     if (ratingParent) {
-    ratingParent.addEventListener('click', (event) => {
-        event.preventDefault();
-        const target = event.target;
-        if (target && target.tagName == 'LI') {
-            for(let i = 0; i < ratingStar.length; i++){
-                ratingStar[i].classList.remove('active')
-            }
-            for (let i = 0; i => ratingStar.length; i++) {
-                if (ratingStar[i] == target) {
-                    ratingStar[i].classList.add('active');
-                    ratingInput.value = ++i;
-                    return
-                } else {
-                    ratingStar[i].classList.add('active');
+        ratingParent.addEventListener('click', (event) => {
+            event.preventDefault();
+            const target = event.target;
+            if (target && target.tagName == 'LI') {
+                for (let i = 0; i < ratingStar.length; i++) {
+                    ratingStar[i].classList.remove('active')
+                }
+                for (let i = 0; i => ratingStar.length; i++) {
+                    if (ratingStar[i] == target) {
+                        ratingStar[i].classList.add('active');
+                        ratingInput.value = ++i;
+                        return
+                    } else {
+                        ratingStar[i].classList.add('active');
+                    }
                 }
             }
-        }
 
-    });
+        });
     }
 
-    /* fix circle works*/   
+    /* fix circle works*/
     let circleWorks = document.querySelectorAll('.works__info');
 
-    if(circleWorks){
+    if (circleWorks) {
         resizeCircle();
-        window.addEventListener('resize', ()=>{
+        window.addEventListener('resize', () => {
             resizeCircle();
-          });
+        });
     }
-    function resizeCircle(){
-        for(let i = 0; i < circleWorks.length; i++){
+
+    function resizeCircle() {
+        for (let i = 0; i < circleWorks.length; i++) {
             let width = circleWorks[i].offsetWidth
             circleWorks[i].style.height = width + 'px';
-            
+
         }
     }
-
-
 
 
     /* VIDEO */
@@ -258,7 +267,7 @@ window.addEventListener('DOMContentLoaded', () =>{
             setupVideo(videos[i]);
         }
     }
-    
+
 
     function setupVideo(video) {
         let link = video.querySelector('.video__link');
@@ -305,14 +314,6 @@ window.addEventListener('DOMContentLoaded', () =>{
 
     findVideos();
 });
-
-
-
-
-
-
-
-
 
 
 /* АДАПТИВНОЕ ПЕРЕМЕЩЕНИЕ БЛОКОВ */

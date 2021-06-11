@@ -1,109 +1,130 @@
 .portfolio {
-    padding: 100px 0;
-    &-item{
-        margin-bottom: 60px;
-        &__img {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img{
-                border-radius: 50%;
+  padding: 100px 0;
 
-            }
-          }
-        
-          &__info {
-            position: absolute;
-            bottom: 0;
-            right: 15%;
-            background-color: $dark;
-            border-radius: 50%;
-            padding: 55px 40px;
-            color: white;
-            transition: $transition2;
-        
-            &:hover {
-              background-color: transparent;
-              color: $dark;
-            }
-          }
-        
-          &__name {
-            font-weight: 300;
-            font-size: 18px;
-            line-height: 23px;
-            margin-bottom: 10px;
-            text-align: center;
-          }
-        
-          &__price {
-            font-size: 30px;
-            line-height: 38px;
-            text-align: center;
-          }
-    }
-    
-  }
-  
-  @media screen and (max-width: 1919px) {
-    .portfolio {
-        &-item{
-        &__info {
-          padding: 35px 25px;
-        }
-    
-        &__name {
-          font-size: 14px;
-          line-height: 18px;
-        }
-    
-        &__price {
-          font-size: 24px;
-          line-height: 30px;
-        }
-              
-        }
-      
-    }
-  }
-  @media screen and (max-width: 1599px) {
-    .portfolio {
-      padding: 80px 0;
-      &-item{
-        &__info {
-            right: 5%;
-          }
-      
-         
+  &-item {
+    margin-bottom: 60px;
+
+    &__img {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        border-radius: 50%;
+
       }
-     
+    }
+
+    &__info {
+      position: absolute;
+      bottom: 0;
+      right: 15%;
+      background-color: $dark;
+      border-radius: 50%;
+      padding: 55px 40px;
+      color: white;
+      transition: $transition2;
+
+      &:hover {
+        background-color: transparent;
+        color: $dark;
+      }
+    }
+
+    &__name {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    &__price {
+      font-size: 30px;
+      line-height: 38px;
+      text-align: center;
     }
   }
-@media screen and (max-width: 767px){
+
+}
+
+.js-portfolio-tab {
+  display: none;
+  transform: scale(0);
+  opacity: 0;
+  transition: $transition2;
+
+  &.active {
+    display: flex;
+
+    animation: showTabs .5s;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 1919px) {
+  .portfolio {
+    &-item {
+      &__info {
+        padding: 35px 25px;
+      }
+
+      &__name {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      &__price {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  .portfolio {
+    padding: 80px 0;
+
+    &-item {
+      &__info {
+        right: 5%;
+      }
+
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 767px) {
   .portfolio {
     padding: 50px 0;
 
   }
 }
-  @media screen and (max-width: 575px){
-    .portfolio {
-        &-item{
-          &__info {
-              padding: 20px 15px;
-            }
-        
-            &__name {
-              font-size: 11px;
-              line-height: 16px;
-              margin-bottom: 5px;
-            }
-        
-            &__price {
-              font-size: 16px;
-              line-height: 22px;
-            }
-        }
-       
+
+@media screen and (max-width: 575px) {
+  .portfolio {
+    &-item {
+      &__info {
+        padding: 20px 15px;
       }
+
+      &__name {
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 5px;
+      }
+
+      &__price {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
   }
+}

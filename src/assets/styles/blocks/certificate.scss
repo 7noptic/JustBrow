@@ -1,5 +1,11 @@
 .certificate{
     margin: 100px 0;
+    &__img{
+        transition: $transition2;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
 }
 @media screen and (max-width: 1590px){
     .certificate{
