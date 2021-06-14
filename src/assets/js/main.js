@@ -12,6 +12,9 @@ window.addEventListener('DOMContentLoaded', () => {
     if (containerEl) {
         let mixer = mixitup(containerEl);
     }
+    const gLightbox = new GLightbox({
+
+    });
     let requestCheck = document.querySelector('.request__checkbox input'),
         requestBtn = document.querySelector('.request__btn');
     console.log(requestCheck && requestBtn);
