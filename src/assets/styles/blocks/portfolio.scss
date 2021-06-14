@@ -12,7 +12,12 @@
 
       img {
         border-radius: 50%;
-
+        width: 620px;
+        height: 620px;
+        min-height: 620px;
+        min-width: 620px;
+        max-width: 620px;
+        max-height: 620px;
       }
     }
 
@@ -49,18 +54,23 @@
 
 }
 
-.js-portfolio-tab {
-  display: none;
-  transform: scale(0);
+.js-work-tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
   opacity: 0;
   transition: $transition2;
 
   &.active {
     display: flex;
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 10;
 
     animation: showTabs .5s;
     opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -69,6 +79,16 @@
     &-item {
       &__info {
         padding: 35px 25px;
+      }
+      &__img{
+        img{
+          width: 590px;
+          height: 590px;
+          min-height: 590px;
+          min-width: 590px;
+          max-width: 590px;
+          max-height: 590px;
+        }
       }
 
       &__name {
@@ -91,6 +111,16 @@
     padding: 80px 0;
 
     &-item {
+      &__img{
+        img{
+          width: 400px;
+          height: 400px;
+          min-height: 400px;
+          min-width: 400px;
+          max-width: 400px;
+          max-height: 400px;
+        }
+      }
       &__info {
         right: 5%;
       }
@@ -120,7 +150,16 @@
         line-height: 16px;
         margin-bottom: 5px;
       }
-
+      &__img{
+        img{
+          width: 320px;
+          height: 320px;
+          min-height: 320px;
+          min-width: 320px;
+          max-width: 320px;
+          max-height: 320px;
+        }
+      }
       &__price {
         font-size: 16px;
         line-height: 22px;

@@ -44,6 +44,7 @@
     "lodash": "^4.17.20",
     "matchheight": "^0.1.2",
     "mini-css-extract-plugin": "^0.11.1",
+    "mixitup": "^3.3.1",
     "node-sass": "^4.14.1",
     "offcanvas-bootstrap": "^2.5.2",
     "optimize-css-assets-webpack-plugin": "^5.0.4",

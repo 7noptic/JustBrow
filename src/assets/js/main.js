@@ -2,12 +2,40 @@
 import Swiper, {Navigation, Pagination, Autoplay} from 'swiper';
 import Readmore from "readmore-js";
 import GLightbox from 'glightbox';
+import mixitup from 'mixitup';
 
 Swiper.use([Navigation, Pagination, Autoplay]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
+    let containerEl = document.querySelector('.js-portfolio-filter');
+    if (containerEl) {
+        let mixer = mixitup(containerEl);
+    }
+    let requestCheck = document.querySelector('.request__checkbox input'),
+        requestBtn = document.querySelector('.request__btn');
+    console.log(requestCheck && requestBtn);
+    let links = document.getElementsByClassName('control');
+    for (let i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', (e) => {
+            e.preventDefault();
+        });
+    }
+    if (requestCheck && requestBtn) {
+        function toggledisabledBtn() {
+            if (requestCheck.checked) {
+                requestBtn.classList.remove('disabled');
+            } else {
+                requestBtn.classList.add('disabled');
+            }
+        }
 
+        toggledisabledBtn();
+        requestCheck.addEventListener('click', (e) => {
+            toggledisabledBtn();
+        });
+
+    }
     /* MODAL */
     let modalBlock = document.querySelector('.js-sidebars'),
         allModal = document.querySelectorAll('.js-sidebars > section'),
@@ -51,18 +79,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     /* TABS */
-    let portfolioParent = document.querySelector('.portfolio'),
-        portfolioLink = document.querySelectorAll('.js-portfolio-link'),
-        portfolioTab = document.querySelectorAll('.js-portfolio-tab'),
-        priceParent = document.querySelector('.js-price-parent'),
+    let priceParent = document.querySelector('.js-price-parent'),
         priceLink = document.querySelectorAll('.js-price-link'),
-        priceTab = document.querySelectorAll('.js-price-tab');
+        priceTab = document.querySelectorAll('.js-price-tab'),
+        workParent = document.querySelector('.js-work-parent'),
+        workLink = document.querySelectorAll('.js-work-link'),
+        workTab = document.querySelectorAll('.js-work-tab');
 
-    if (portfolioLink && portfolioParent && portfolioTab) {
-        toggleTabs(portfolioLink, portfolioTab, portfolioParent, 'js-portfolio-link');
-    }
+
     if (priceLink && priceParent && priceTab) {
         toggleTabs(priceLink, priceTab, priceParent, 'js-price-link');
+    }
+    if (workLink && workParent && workTab) {
+        toggleTabs(workLink, workTab, workParent, 'js-work-link');
     }
 
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {
@@ -156,6 +185,8 @@ window.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 3,
         spaceBetween: 33,
         centeredSlides: true,
+        observeParents: true,
+        observer: true,
         breakpoints: {
             0: {
                 slidesPerView: 1,
@@ -245,14 +276,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (circleWorks) {
         resizeCircle();
-        window.addEventListener('resize', () => {
+        window.addEventListener('resize', (e) => {
             resizeCircle();
         });
     }
 
     function resizeCircle() {
         for (let i = 0; i < circleWorks.length; i++) {
-            let width = circleWorks[i].offsetWidth
+            let width = circleWorks[i].offsetWidth;
             circleWorks[i].style.height = width + 'px';
 
         }
