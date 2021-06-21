@@ -275,19 +275,27 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     /* fix circle works*/
-    let circleWorks = document.querySelectorAll('.works__info');
+    let circleWorks = document.querySelectorAll('.works__info'),
+        portfolioItems = document.querySelectorAll('.portfolio-item__info');
 
-    if (circleWorks) {
-        resizeCircle();
+    if (portfolioItems) {
+        resizeCircle(portfolioItems);
         window.addEventListener('resize', (e) => {
-            resizeCircle();
+            resizeCircle(portfolioItems);
         });
     }
 
-    function resizeCircle() {
-        for (let i = 0; i < circleWorks.length; i++) {
-            let width = circleWorks[i].offsetWidth;
-            circleWorks[i].style.height = width + 'px';
+    if (circleWorks) {
+        resizeCircle(circleWorks);
+        window.addEventListener('resize', (e) => {
+            resizeCircle(circleWorks);
+        });
+    }
+
+    function resizeCircle(items) {
+        for (let i = 0; i < items.length; i++) {
+            let width = items[i].offsetWidth;
+            items[i].style.height = width + 'px';
 
         }
     }
