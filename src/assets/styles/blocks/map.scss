@@ -21,6 +21,17 @@
         display: block;
         width: 100%;
         margin-bottom: 40px;
+        position: relative;
+
+        &:nth-child(3) {
+          &::before {
+            position: absolute;
+            right: 5px;
+            top: calc(50% - 4px);
+          }
+
+
+        }
       }
     }
 
@@ -109,22 +120,26 @@
     }
   }
 }
-@media screen and (max-width:767px){
-  .map{
+
+@media screen and (max-width: 767px) {
+  .map {
     padding: 50px 0;
+
     &-form {
 
       margin-bottom: 50px;
 
 
     }
+
     iframe {
       height: 470px;
     }
   }
 }
-@media screen and (max-width:575px){
-  .map{
+
+@media screen and (max-width: 575px) {
+  .map {
     iframe {
       width: calc(100% + 30px);
       margin-left: -15px;

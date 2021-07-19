@@ -1,62 +1,151 @@
-.form{
-    &__input{
-        background-color: #fff;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(#000, .2);
-        width: 100%;
-        &:hover,&:active,&:focus{
-            border-bottom: 1px solid rgba(#000, .2);
-        }
-        &::placeholder{
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 20px;
-        }
+.form {
+  &__input {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(#000, .2);
+    width: 100%;
+
+    &:hover, &:active, &:focus {
+      border-bottom: 1px solid rgba(#000, .2);
     }
-    &__select{
-        width: 100%;
-        cursor: pointer;
-            position: relative;
-            display: inline-block;
-            border-top: none;
-                border-left: none;
-                border-right: none;
-                border-bottom: 1px solid rgba(#000, .2);
-                padding: 10px 0;
-                -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            &:hover,&:active,&:focus,&:focus-visible,&:focus-within,&:visited{
-                border-top: none;
-                border-left: none;
-                border-right: none;
-                border-bottom: 1px solid rgba(#000, .2);
-            }
-        &::placeholder{
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 20px;
-        }
-          &:after {
-            content: "▼";
-            padding: 0 8px;
-            font-size: 12px;
-            position: absolute;
-            right: 8px;
-            top: 4px;
-            z-index: 1;
-            text-align: center;
-            width: 10%;
-            height: 100%;
-            pointer-events: none;
-            box-sizing: border-box;
-          }
-            
+
+    &::placeholder {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
     }
-    &__agreement{
-        font-size: 10px;
-line-height: 13px;
-margin-bottom: 30px;
-text-align: center;
+  }
+
+  &__select {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(#000, .2);
+    padding: 10px 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+
+    &:hover, &:active, &:focus, &:focus-visible, &:focus-within, &:visited {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid rgba(#000, .2);
     }
+
+    &::placeholder {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &:after {
+      content: "▼";
+      padding: 0 8px;
+      font-size: 12px;
+      position: absolute;
+      right: 8px;
+      top: 4px;
+      z-index: 1;
+      text-align: center;
+      width: 10%;
+      height: 100%;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
+
+  }
+
+  &__agreement {
+    font-size: 10px;
+    line-height: 13px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
 }
+
+.new-select {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(#000, .2);
+  padding: 10px 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+
+  &:hover, &:active, &:focus, &:focus-visible, &:focus-within, &:visited {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(#000, .2);
+
+  }
+
+
+
+
+  &::placeholder {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &:after {
+    content: "▼";
+    padding: 0 8px;
+    font-size: 12px;
+    position: absolute;
+    right: 8px;
+    top: calc(50% - 8px);
+    z-index: 1;
+    text-align: center;
+    width: 10%;
+    height: 100%;
+    pointer-events: none;
+    box-sizing: border-box;
+  }
+
+}
+
+
+.new-select__list {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  background: #fff;
+  user-select: none;
+}
+
+.new-select__list.on {
+  display: block;
+}
+
+.new-select__item span {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 0!important;
+}
+
+.new-select__item span:hover {
+  color: $dark;
+}
+
