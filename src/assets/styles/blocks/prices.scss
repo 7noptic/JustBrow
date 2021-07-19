@@ -1,153 +1,291 @@
-.prices{
-    margin-bottom: 80px;
-    display: none;
-    transform: scale(0);
-    opacity: 0;
-    transition: $transition2;
-    &.active{
-        display: block;
-        animation: showTabs .5s;
-        opacity: 1;
-        transform: scale(1);
+.prices {
+  margin-bottom: 80px;
+  display: none;
+  transform: scale(0);
+  opacity: 0;
+  transition: $transition2;
+
+  &.active {
+    display: block;
+    animation: showTabs .5s;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__header {
+    display: flex;
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(#000, .2);
+  }
+
+  &__name {
+    width: 30%;
+  }
+
+  &__descr {
+    width: 55%;
+  }
+
+  &__price {
+    width: 15%;
+  }
+
+  &-item {
+    display: flex;
+    width: 100%;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(#000, .2);
+
+    &__name {
+      width: 30%;
+      padding-right: 15px;
     }
-    &__header{
-        display: flex;
-        width: 100%;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 23px;
-        padding: 5px 0;
-        border-bottom: 1px solid rgba(#000, .2);
+
+    &__descr {
+      width: 55%;
+      padding-right: 15%;
     }
-    &__name{
-        width: 30%;
+
+    &__price {
+      width: 15%;
+      font-size: 18px;
+      line-height: 23px;
     }
-    &__descr{
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.tablepress {
+  thead {
+    th {
+      background-color: #fff !important;
+      font-weight: 500 !important;
+      font-size: 18px !important;
+      line-height: 23px !important;
+      padding: 5px 0 !important;
+      border-bottom: 1px solid rgba(0, 0, 0, .2) !important;
+
+    }
+  }
+
+  th {
+    &.column-1 {
+      width: 30% !important;
+      padding-right: 15px;
+    }
+
+    &.column-2 {
+      width: 55% !important;
+      padding-right: 15%;
+    }
+
+    &.column-3 {
+      width: 15% !important;
+    }
+
+  }
+
+  .row-hover {
+    td {
+      font-weight: 300 !important;
+      font-size: 14px !important;
+      line-height: 18px !important;
+      padding: 20px 0 !important;
+      border-bottom: 1px solid rgba(#000, .2) !important;
+
+      &.column-3 {
+        font-size: 18px !important;
+        line-height: 23px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .prices {
+
+    &-item {
+
+      &__descr {
         width: 55%;
+        padding-right: 10%;
+      }
+
     }
-    &__price{
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .prices {
+    margin-bottom: 70px;
+
+    &__header {
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    &-item {
+      font-size: 12px;
+      line-height: 17px;
+      padding: 15px 0;
+
+      &__price {
         width: 15%;
+        font-size: 13px;
+        line-height: 17px;
+      }
     }
-    &-item{
-        display: flex;
-        width: 100%;
-        font-weight: 300;
+  }
+  .tablepress {
+    thead {
+      th {
+        font-size: 16px !important;
+        line-height: 21px !important;
+
+      }
+    }
+
+
+    .row-hover {
+      td {
+        font-weight: 300 !important;
+        font-size: 12px !important;
+        line-height: 17px !important;
+        padding: 15px 0 !important;
+
+        border-bottom: 0!important;
+
+        &.column-3 {
+          font-size: 12px !important;
+          line-height: 17px !important;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 575px) {
+  .prices {
+    margin-bottom: 80px;
+
+    &__header {
+      display: flex;
+      width: 100%;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(#000, .2);
+    }
+
+    &__name {
+      display: none;
+    }
+
+    &__descr {
+      display: none;
+    }
+
+    &__price {
+      display: none;
+    }
+
+    &-item {
+      display: flex;
+      width: 100%;
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 13px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+
+      span {
+        display: block;
         font-size: 14px;
         line-height: 18px;
-        padding: 20px 0;
-        border-bottom: 1px solid rgba(#000, .2);
-        &__name{
-            width: 30%;
-            padding-right: 15px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      &__name {
+        order: 1;
+        width: 65%;
+        padding-right: 15px;
+      }
+
+      &__descr {
+        margin-top: 15px;
+        order: 3;
+        width: 100%;
+        padding-right: 0;
+      }
+
+      &__price {
+        display: flex;
+        justify-content: end;
+        order: 2;
+        width: 35%;
+        font-size: 12px;
+        line-height: 15px;
+        flex-wrap: wrap;
+
+        span {
+          width: 100%;
+          display: flex;
+          justify-content: end;
         }
-        &__descr{
-            width: 55%;
-            padding-right: 15%;
-        }
-        &__price{
-            width: 15%;
-            font-size: 18px;
-            line-height: 23px;
-        }
-        span{
-            display: none;
-        }
+      }
+
     }
-}
-@media screen and (max-width:1199px){
-    .prices{
-       
-        &-item{
-            
-            &__descr{
-                width: 55%;
-                padding-right: 10%;
-            }
-            
-        }
+  }
+  .tablepress {
+    thead {
+      display: none !important;
+
     }
-}
-@media screen and (max-width:991px){
-    .prices{
-        margin-bottom: 70px;
-        &__header{
-            font-size: 16px;
-            line-height: 21px;
-        }
-        &-item{
-            font-size: 12px;
-            line-height: 17px;
-            padding: 15px 0;
-            &__price{
-                width: 15%;
-                font-size: 13px;
-                line-height: 17px;
-            }
-        }
+
+    th {
+      &.column-1, &.column-2, &.column-3 {
+        width: 100% !important;
+        padding: 10px 0 !important;
+      }
+
     }
-}
-@media screen and (max-width:575px){
-    .prices{
-        margin-bottom: 80px;
-        &__header{
-            display: flex;
-            width: 100%;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 17px;
-            padding: 5px 0;
-            border-bottom: 1px solid rgba(#000, .2);
+
+    .row-hover {
+      tr {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(#000, .2) !important;
+        td {
+
+          font-weight: 300 !important;
+          font-size: 10px !important;
+          line-height: 13px !important;
+          padding: 10px 0 !important;
+          border: 0!important;
+
+          &.column-3 {
+            font-size: 12px !important;
+            line-height: 15px !important;
+            border: 0!important;
+          }
         }
-        &__name{
-            display: none;
-        }
-        &__descr{
-            display: none;
-        }
-        &__price{
-            display: none;
-        }
-        &-item{
-            display: flex;
-            width: 100%;
-            font-weight: 300;
-            font-size: 10px;
-            line-height: 13px;
-            padding: 10px 0;
-            flex-wrap: wrap;
-            span{
-                display: block;
-                font-size: 14px;
-                line-height: 18px;
-                font-weight:600;
-                margin-bottom: 5px;
-            }
-            &__name{
-                order: 1;
-                width: 65%;
-                padding-right: 15px;
-            }
-            &__descr{
-                margin-top: 15px;
-                order: 3;
-                width: 100%;
-                padding-right: 0;
-            }
-            &__price{
-                display: flex;
-                justify-content: end;
-                order: 2;
-                width: 35%;
-                font-size: 12px;
-            line-height: 15px;
-            flex-wrap: wrap;
-            span{
-                width: 100%;
-                display: flex;
-                justify-content: end;
-            }
-            }
-            
-        }
+      }
+
+
     }
+  }
 }
