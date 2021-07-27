@@ -1,0 +1,18 @@
+.tab {
+  z-index: -1;
+  position: absolute;
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition2;
+
+
+  &.active {
+    position: relative;
+    z-index: 1;
+    animation: showTabs .5s;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}

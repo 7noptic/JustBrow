@@ -10,7 +10,7 @@ Swiper.use([Navigation, Pagination, Autoplay]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
-    $('select').each(function() {
+    $('select').each(function () {
         const _this = $(this),
             selectOption = _this.find('option'),
             selectOptionLength = selectOption.length,
@@ -43,16 +43,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const selectItem = selectList.find('.new-select__item');
         selectList.slideUp(0);
-        selectHead.on('click', function() {
-            if ( !$(this).hasClass('on') ) {
+        selectHead.on('click', function () {
+            if (!$(this).hasClass('on')) {
                 $(this).addClass('on');
                 selectList.slideDown(duration);
 
-                selectItem.on('click', function() {
+                selectItem.on('click', function () {
                     let chooseItem = $(this).data('value');
 
                     $('select').val(chooseItem).attr('selected', 'selected');
-                    selectHead.text( $(this).find('span').text() );
+                    selectHead.text($(this).find('span').text());
 
                     selectList.slideUp(duration);
                     selectHead.removeClass('on');
@@ -64,16 +64,10 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    let containerEl = document.querySelector('.js-portfolio-filter');
-    if (containerEl) {
-        let mixer = mixitup(containerEl);
-    }
-    const gLightbox = new GLightbox({
 
-    });
+    const gLightbox = new GLightbox({});
     let requestCheck = document.querySelector('.request__checkbox input'),
         requestBtn = document.querySelector('.request__btn');
-    console.log(requestCheck && requestBtn);
     let links = document.getElementsByClassName('control');
     for (let i = 0; i < links.length; i++) {
         links[i].addEventListener('click', (e) => {
@@ -143,7 +137,10 @@ window.addEventListener('DOMContentLoaded', () => {
         priceTab = document.querySelectorAll('.js-price-tab'),
         workParent = document.querySelector('.js-work-parent'),
         workLink = document.querySelectorAll('.js-work-link'),
-        workTab = document.querySelectorAll('.js-work-tab');
+        workTab = document.querySelectorAll('.js-work-tab'),
+        portfolioParent = document.querySelector('.js-portfolio-parent'),
+        portfolioLink = document.querySelectorAll('.js-portfolio-link'),
+        portfolioTab = document.querySelectorAll('.js-portfolio-tab');
 
 
     if (priceLink && priceParent && priceTab) {
@@ -151,6 +148,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     if (workLink && workParent && workTab) {
         toggleTabs(workLink, workTab, workParent, 'js-work-link');
+    }
+    if (portfolioLink && portfolioParent && portfolioTab) {
+        toggleTabs(portfolioLink, portfolioTab, portfolioParent, 'js-portfolio-link');
     }
 
     function toggleTabs(link, tabs, parent, classContains, subTabs, subLink, subContent) {

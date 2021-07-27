@@ -1,163 +1,192 @@
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 15px;
-    position: fixed;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 15px;
+  position: fixed;
 
-    .logo{
-        display: flex;
-        justify-content: center;
+  .logo {
+    display: flex;
+    justify-content: center;
+    transition: $transition4;
+    margin-bottom: 60px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+
+  &__exit {
+    display: none;
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 80px;
+  }
+
+  &__menu {
+    a {
+      display: block;
+      text-align: center;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: block;
+      margin-right: 20px;
+      transition: $transition4;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &:last-child, &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.header-2 {
+  .logo {
+    display: none;
+
+    &-min {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  .header {
+    max-width: 160px;
+    padding: 60px 0;
+
+    &__text {
+      font-size: 14px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media screen and (max-height: 770px) {
+  .header {
+    padding: 15px 0;
+
+    .logo {
+      margin-bottom: 15px;
+    }
+
+    &__text {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    &__menu {
+      a {
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .header {
+    max-width: 100%;
+    padding: 60px;
+    position: relative;
+
+    &__exit {
+      display: block;
+      cursor: pointer;
+      transition: $transition4;
+      margin-bottom: 60px;
+
+      img {
         transition: $transition4;
-        margin-bottom: 60px;
-            &:hover{
-                transform: scale(1.1);
-            }
-        
-    }
-    &__exit{
-        display: none;
-    }
-    &__text{
-        text-align: center;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 20px;
-        margin-bottom: 80px;
-    }
-    &__menu{
-        a{
-            display: block;
-            text-align: center;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 20px;
-            margin-bottom: 30px;
+
+        &:hover {
+          transform: rotate(180deg);
         }
+      }
+
     }
-    &__social{
+
+  }
+  .header-2 {
+    margin-top: 30px;
+
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 60px;
+
+    &__exit {
+      display: block;
+      cursor: pointer;
+      transition: $transition4;
+      margin-bottom: 60px;
+
+      img {
+        transition: $transition4;
+
+        &:hover {
+          transform: rotate(180deg);
+        }
+      }
+
+    }
+
+    .logo {
+      display: none;
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header-2 {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px;
+    background-color: #fff;
+    z-index: 9;
+    margin-top: 0;
+
+    .logo {
+      display: none;
+
+      &-min {
         display: flex;
         justify-content: center;
-        align-items: center;
-        a{
-            display: block;
-            margin-right: 20px;
-            transition: $transition4;
-            &:hover{
-                transform: scale(1.2);
-            }
-            &:last-child,&:last-of-type{
-                margin-right: 0;
-            }
-        }
+      }
     }
-}
-.header-2{
-    .logo{
-        display: none;
-        &-min{
-            display: none;
-        }
-    }
-}
-@media screen and (max-width: 1599px){
-    .header{
-        max-width: 160px;
-        padding: 60px 0;
-        &__text{
-            font-size: 14px;
-            margin-bottom: 50px;
-        }
-    }
-}
-@media screen and (max-height:770px){
-    .header{
-        padding: 15px 0;
-        .logo{
-            margin-bottom: 15px;
-        }
-        &__text{
-            font-size: 12px;
-            margin-bottom: 15px;
-        }
-        &__menu{
-            a{
-                font-size: 14px;
-                line-height: 17px;
-                margin-bottom: 10px;
-            }
-        }
-    }
-}
-@media screen and (max-width:1199px){
-    .header{
-        max-width: 100%;
-        padding: 60px;
-        position: relative;
-        &__exit{
-            display: block;
-            cursor: pointer;
-            transition: $transition4;
-            margin-bottom: 60px;
-            img{
-                transition: $transition4;
-                &:hover{
-                    transform: rotate(180deg);
-                }
-            }
-            
-        }
-       
-    }
-    .header-2{
-        margin-top: 30px;
-        .logo{
-            display: flex;
-            justify-content: center;
-        }
-    }
-}
-@media screen and (max-width:767px){
-    .header{
-        padding: 60px;
-        
-        &__exit{
-            display: block;
-            cursor: pointer;
-            transition: $transition4;
-            margin-bottom: 60px;
-            img{
-                transition: $transition4;
-                &:hover{
-                    transform: rotate(180deg);
-                }
-            }
-            
-        }
-        .logo{
-            display: none;
-        }
-        &__text{
-            display: none;
-        }
-    }
-}
-@media screen and (max-width:575px){
-    .header-2{
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 25px;
-        background-color: #fff;
-z-index: 9;
-margin-top: 0;
-        .logo{
-            display:none;
-            &-min{
-                display: flex;
-            justify-content: center;
-            }
-        }
-    }
+  }
 }

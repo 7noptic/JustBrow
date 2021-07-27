@@ -1,16 +1,6 @@
 .prices {
   margin-bottom: 80px;
-  display: none;
-  transform: scale(0);
-  opacity: 0;
-  transition: $transition2;
 
-  &.active {
-    display: block;
-    animation: showTabs .5s;
-    opacity: 1;
-    transform: scale(1);
-  }
 
   &__header {
     display: flex;
